@@ -1,4 +1,4 @@
-//code documentation 
+//code documentation paper 
 //Program specification
 
 //Emulate full deck of cards
