@@ -9,38 +9,39 @@ public class Deck {
     }
 
     public void initDeck() {
-        for (int i = 0; i < length; i++) {
-            deck[i] = false;
+        for (int i = 0; i < this.length; i++) {
+            this.deck[i] = false;
         }
     }
 
     public void print() {
-        for (boolean card : deck) {
+        for (boolean card : this.deck) {
             System.out.print(card);
         }
         System.out.println(); // Add a newline at the end for formatting.
     }
 
     public boolean emptyDeck() {
-        for (int i = 0; i < length; i++) {
-            if (!deck[i])
+        for (int i = 0; i < this.length; i++) {
+            //System.out.print(!this.deck[i]);
+            if (!this.deck[i])
                 return false;
         }
         return true;
     }
 
     public int dealCard() {
-        for (int i = 0; i < length; i++) {
-            int random = new Random().nextInt(length);
-            if (deck[random] == false) {
-                deck[random] = true;
+        for (int i = 0; i < this.length; i++) {
+            int random = new Random().nextInt(this.length);
+            while (this.deck[random] == false) {
+                this.deck[random] = true;
                 return random;
             }
         }
-        return 0;
+        return -1;
     }
 
-    public String printCard(int index) {
+    public static String cardToString(int index) {
 
         String[] suits = {"H", "D", "C", "S"};
         String[] ranks = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};

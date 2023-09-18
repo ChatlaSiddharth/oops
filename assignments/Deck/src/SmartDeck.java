@@ -1,5 +1,5 @@
+import java.util.Arrays;
 public class SmartDeck extends Deck {
-
     private int cardsDealt = 0;
     @Override
     public void initDeck() {
@@ -7,15 +7,17 @@ public class SmartDeck extends Deck {
     }
     public int dealCard(){
         int card = super.dealCard();
-        cardsDealt++;
+        if (card > -1) {
+            this.cardsDealt++;
+        }
         return card;
     }
     public int getCardsDealt(){
         return cardsDealt;
     }
-    public String printCard(int index){
+    public static String cardToString(int index){
         String cards;
-        cards = super.printCard(index);
+        cards = Deck.cardToString(index);
         return cards;
     }
 

@@ -5,30 +5,30 @@ import com.sun.source.tree.WhileLoopTree;
 
 public class Main {
     public static void main(String[] args) {
-
-        Deck myDeck = new Deck();
-        final int cardsPerRow = 8;
-        int cardsThisRow = 0;
-        String temp ;
-        int myCard;
+        /*
+        Deck myDeck = new SmartDeck();
+        final int cardsPerRow2 = 8;
+        int cardsThisRow2 = 0;
+        String temp2 ;
+        int myCard2;
         while(!myDeck.emptyDeck()){
-            myCard = myDeck.dealCard();
-            ++cardsThisRow;
-            if (cardsThisRow <= cardsPerRow) {
-                temp = myDeck.printCard(myCard);
-                System.out.print(temp);
+            myCard2 = myDeck.dealCard();
+            ++cardsThisRow2;
+            if (cardsThisRow2 <= cardsPerRow2) {
+                temp2 = myDeck.cardToString(myCard2);
+                System.out.print(temp2);
                 System.out.print("  ");
             }
             else{
                 System.out.println("");
-                cardsThisRow = 1;
-                temp = myDeck.printCard(myCard);
-                System.out.print(temp);
+                cardsThisRow2 = 1;
+                temp2 = myDeck.cardToString(myCard2);
+                System.out.print(temp2);
                 System.out.print("  ");
             }
         }
         System.out.println("\n");
-        System.out.println("\nSmart Cards Implementation :");
+*/
 
         //-----------------------------------------------------------------------------------------------------
         // The Code in the above myDeck which is an object of the class Deck is the same
@@ -42,25 +42,29 @@ public class Main {
         int cardsThisRow2 = 0;
         String temp2 ;
         int myCard2;
-        while(!myDeck2.emptyDeck()){
+        while(!myDeck2.emptyDeck()) {
             myCard2 = myDeck2.dealCard();
             ++cardsThisRow2;
-            if (cardsThisRow2 <= cardsPerRow2) {
-                temp2 = myDeck2.printCard(myCard2);
-                System.out.print(temp2);
-                System.out.print("  ");
-            }
-            else{
-                System.out.println("");
-                cardsThisRow2 = 1;
-                temp2 = myDeck2.printCard(myCard2);
-                System.out.print(temp2);
-                System.out.print("  ");
+            if (myCard2 != -1) {
+
+                if (cardsThisRow2 <= cardsPerRow2) {
+                    temp2 = myDeck2.cardToString(myCard2);
+                    System.out.print(temp2);
+                    System.out.print("  ");
+                } else {
+                    System.out.println("");
+                    cardsThisRow2 = 1;
+                    temp2 = myDeck2.cardToString(myCard2);
+                    System.out.print(temp2);
+                    System.out.print("  ");
+                }
             }
         }
         System.out.println("\n");
         System.out.println("\nCards Dealt: " + myDeck2.getCardsDealt());
+
     }
 
 }
+
 
